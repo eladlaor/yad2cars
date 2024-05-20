@@ -6,6 +6,8 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+const MAX_RETRIES = 3;
+
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "POST") {
     res.setHeader("Allow", ["POST"]);
@@ -14,27 +16,44 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const { inputText } = req.body;
 
-  try {
-    const response = await openai.chat.completions.create({
-      model: "gpt-4",
-      messages: [
-        {
-          role: "system",
-          content:
-            "You are an assistant that converts Hebrew text into search query parameters for the yad2.co.il vehicle listings site.",
-        },
-        {
-          role: "user",
-          content: `Convert the following text into search parameters for yad2.co.il in the form of a JSON object with keys carFamilyType, manufacturer, year, and price: ${inputText}`,
-        },
-      ],
-      max_tokens: 200,
-    });
+  const generateSearchParams = async (retries: number): Promise<string> => {
+    try {
+      const response = await openai.chat.completions.create({
+        model: "gpt-4",
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are an assistant that converts Hebrew text into search query parameters for the yad2.co.il vehicle listings site. The output should be a JSON object with the following keys: carFamilyType, manufacturer, year, and price. Ensure that carFamilyType and manufacturer are arrays if there are multiple values, and that price is a range if specified as such. The year can be a single year or a range.",
+          },
+          {
+            role: "user",
+            content: inputText,
+          },
+        ],
+        max_tokens: 200,
+      });
 
-    const jsonResponse = response?.choices[0]?.message?.content?.trim();
-    if (!jsonResponse) {
-      throw new Error("no json response!");
+      const jsonResponse = response?.choices[0]?.message?.content?.trim();
+      if (!jsonResponse) {
+        throw new Error("No JSON response!");
+      }
+      JSON.parse(jsonResponse); // Check if it is valid JSON
+      return jsonResponse;
+    } catch (error) {
+      if (retries > 0) {
+        console.error(`Retrying... Retries left: ${MAX_RETRIES - retries + 1}`);
+        return generateSearchParams(retries - 1);
+      } else {
+        throw new Error(
+          "Failed to generate search parameters after multiple attempts"
+        );
+      }
     }
+  };
+
+  try {
+    const jsonResponse = await generateSearchParams(MAX_RETRIES);
     const searchParams = JSON.parse(jsonResponse);
 
     const urlParams = new URLSearchParams();

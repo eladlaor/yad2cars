@@ -1,6 +1,6 @@
-// components/SearchInput.tsx
 import { useState } from "react";
 import axios from "axios";
+import { openInNewTab } from "../utils/navigation";
 
 const SearchInput = () => {
   const [inputText, setInputText] = useState("");
@@ -12,8 +12,7 @@ const SearchInput = () => {
       });
       const { searchUrl } = response.data;
 
-      // Open the generated URL in a new tab
-      window.open(searchUrl, "_blank");
+      openInNewTab(searchUrl);
     } catch (error) {
       console.error(error);
     }
