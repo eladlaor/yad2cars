@@ -38,7 +38,7 @@ export const manufacturerMapping = [
   },
   {
     id: 7,
-    title: "ב.מ.וו",
+    title: "ב.מ.וו / BMW",
   },
   {
     id: 8,
