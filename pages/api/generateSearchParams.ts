@@ -5,6 +5,8 @@ import {
   manufacturerMapping,
   upperBoundYearKeywords,
   lowerBoundYearKeywords,
+  lowerBoundPriceKeywords,
+  upperBoundPriceKeywords,
 } from "../../utils/mappings";
 
 const openai = new OpenAI({
@@ -13,26 +15,26 @@ const openai = new OpenAI({
 
 const MAX_RETRIES = 3;
 
-const processYearRange = (
-  years: string[],
+const processRange = (
+  values: string[],
   isLowerBound: boolean,
   isUpperBound: boolean
 ): string => {
-  const numericYears = years
-    .map((year) => parseInt(year, 10))
-    .filter((year) => !isNaN(year));
+  const numericValues = values
+    .map((value) => parseInt(value, 10))
+    .filter((value) => !isNaN(value));
 
-  if (numericYears.length === 0) return "";
+  if (numericValues.length === 0) return "";
 
-  const minYear = Math.min(...numericYears);
-  const maxYear = Math.max(...numericYears);
+  const minValue = Math.min(...numericValues);
+  const maxValue = Math.max(...numericValues);
 
   if (isLowerBound && !isUpperBound) {
-    return `${minYear}--1`;
+    return `${minValue}--1`;
   } else if (isUpperBound && !isLowerBound) {
-    return `-1-${maxYear}`;
+    return `-1-${maxValue}`;
   } else {
-    return `${minYear}-${maxYear}`;
+    return `${minValue}-${maxValue}`;
   }
 };
 
@@ -48,35 +50,43 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   The output should be a JSON object with the following keys: 
   carFamilyType, 
   manufacturer, 
-  year, isUpperBound, isLowerBound, 
-  and price.
-  
+  year, isUpperBoundYear, isLowerBoundYear, 
+  price, isUpperBoundPrice, isLowerBoundPrice.
+    
   Ensure that carFamilyType and manufacturer are arrays, even if they contain only one element.
-  
+    
   Here are the mappings for carFamilyType:
   ${Object.entries(carFamilyTypeMapping)
     .map(([key, value]) => `${key}: ${value}`)
     .join(", ")}
-
+  
   Here are the mappings for manufacturer:
   ${manufacturerMapping.map((m) => `${m.title}: ${m.id}`).join(", ")}
-  
+    
   Set the json values accordingly to the values of the above maps.
-  
+    
   Regarding the year param:
   Ensure the value of 'year' is an array, even if it contains only one element.
   The format for year values are expected to be either 4 digit (2014) or shortcut two digit (14').
   If you identify a shortcut format of a year, transform it to a 4 digit format.
-
-  isUpperBound should be boolean:
+  
+  isUpperBoundYear should be boolean:
   set to true if you identify words that imply an upper bound, such as: ${upperBoundYearKeywords}.
   false otherwise.
-
-  isLowerBound should be boolean:
-  same logic as isUpperBound, but refering to a lower bound, with words like ${lowerBoundYearKeywords}.
   
-  Ensure that price is a range if specified as such.
-`;
+  isLowerBoundYear should be boolean:
+  same logic as isUpperBoundYear, but referring to a lower bound, with words like ${lowerBoundYearKeywords}.
+    
+  Regarding the price param:
+  Ensure the value of 'price' is an array, even if it contains only one element.
+  
+  isUpperBoundPrice should be boolean:
+  set to true if you identify words that imply an upper bound, such as: ${upperBoundPriceKeywords}.
+  false otherwise.
+  
+  isLowerBoundPrice should be boolean:
+  same logic as isUpperBoundPrice, but referring to a lower bound, with words like ${lowerBoundPriceKeywords}.
+  `;
 
   const generateSearchParams = async (retries: number): Promise<string> => {
     try {
@@ -125,25 +135,23 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       if (searchParams.year) {
         urlParams.append(
           "year",
-          processYearRange(
+          processRange(
             searchParams.year,
-            searchParams.isLowerBound,
-            searchParams.isUpperBound
+            searchParams.isLowerBoundYear,
+            searchParams.isUpperBoundYear
           )
         );
       }
 
       if (searchParams.price) {
-        if (typeof searchParams.price === "string") {
-          urlParams.append("price", searchParams.price);
-        } else if (Array.isArray(searchParams.price)) {
-          urlParams.append("price", searchParams.price.join("-"));
-        } else if (typeof searchParams.price === "object") {
-          const priceString = `${searchParams.price.min || ""}-${
-            searchParams.price.max || ""
-          }`;
-          urlParams.append("price", priceString);
-        }
+        urlParams.append(
+          "price",
+          processRange(
+            searchParams.price,
+            searchParams.isLowerBoundPrice,
+            searchParams.isUpperBoundPrice
+          )
+        );
       }
 
       return `https://www.yad2.co.il/vehicles/cars?${urlParams.toString()}`;
