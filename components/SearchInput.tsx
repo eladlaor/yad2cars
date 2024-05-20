@@ -41,7 +41,7 @@ const SearchInput = () => {
           onClick={handleSearch}
           disabled={isLoading}
         >
-          {isLoading ? "...מתניע" : "חיפוש"}
+          {isLoading ? "...מתניע, אוטוטו מוצא" : "חיפוש"}
         </Button>
       </div>
     </Container>
