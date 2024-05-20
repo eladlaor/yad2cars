@@ -13,149 +13,380 @@ export const carFamilyTypeMapping: { [key: string]: number } = {
 
 export const manufacturerMapping = [
   {
-    id: 2,
-    title: "אופל",
-    engTitle: "opel",
+    id: 1,
+    title: "אאודי",
   },
   {
-    id: 85,
-    title: "איווקו",
-    engTitle: "iveco",
+    id: 2,
+    title: "אופל",
+  },
+  {
+    id: 3,
+    title: "אינפיניטי",
   },
   {
     id: 4,
     title: "איסוזו",
-    engTitle: "isuzu",
+  },
+  {
+    id: 5,
+    title: "אלפא רומיאו",
+  },
+  {
+    id: 6,
+    title: "אם. ג'י. / MG",
+  },
+  {
+    id: 7,
+    title: "ב.מ.וו",
+  },
+  {
+    id: 8,
+    title: "ביואיק",
   },
   {
     id: 9,
     title: "ג'י.אם.סי / GMC",
-    engTitle: "gmc",
+  },
+  {
+    id: 10,
+    title: "ג'יפ / Jeep",
+  },
+  {
+    id: 11,
+    title: "גרייט וול",
   },
   {
     id: 12,
     title: "דאצ'יה",
-    engTitle: "dacia",
   },
   {
-    id: 88,
-    title: "דונגפנג",
-    engTitle: "dongpeng",
+    id: 13,
+    title: "דודג'",
   },
   {
-    id: 95,
-    title: "הינו",
-    engTitle: "hino",
+    id: 14,
+    title: "די.אס / DS",
+  },
+  {
+    id: 15,
+    title: "דייהטסו",
+  },
+  {
+    id: 16,
+    title: "האמר",
+  },
+  {
+    id: 17,
+    title: "הונדה",
+  },
+  {
+    id: 18,
+    title: "וולוו",
   },
   {
     id: 19,
     title: "טויוטה",
-    engTitle: "toyota",
+  },
+  {
+    id: 20,
+    title: "יגואר",
   },
   {
     id: 21,
     title: "יונדאי",
-    engTitle: "hyundai",
+  },
+  {
+    id: 23,
+    title: "לינקולן",
+  },
+  {
+    id: 24,
+    title: "לנד רובר",
+  },
+  {
+    id: 25,
+    title: "לנצ'יה",
+  },
+  {
+    id: 26,
+    title: "לקסוס",
   },
   {
     id: 27,
     title: "מאזדה",
-    engTitle: "mazda",
   },
   {
-    id: 86,
-    title: "מאן",
-    engTitle: "man",
+    id: 28,
+    title: "מזראטי",
+  },
+  {
+    id: 29,
+    title: "מיני",
   },
   {
     id: 30,
     title: "מיצובישי",
-    engTitle: "mitsubishi",
-  },
-  {
-    id: 89,
-    title: "מקסוס",
-    engTitle: "mexus",
   },
   {
     id: 31,
     title: "מרצדס",
-    engTitle: "mercedes",
   },
   {
     id: 32,
     title: "ניסאן",
-    engTitle: "nissan",
+  },
+  {
+    id: 33,
+    title: "סאאב",
+  },
+  {
+    id: 34,
+    title: "סאנגיונג",
   },
   {
     id: 35,
     title: "סובארו",
-    engTitle: "subaru",
   },
   {
     id: 36,
     title: "סוזוקי",
-    engTitle: "suzuki",
   },
   {
     id: 37,
     title: "סיאט",
-    engTitle: "seat",
   },
   {
     id: 38,
     title: "סיטרואן",
-    engTitle: "citroen",
   },
   {
-    id: 97,
-    title: "סנטרו",
-    engTitle: "centro",
+    id: 39,
+    title: "סמארט",
   },
   {
     id: 40,
     title: "סקודה",
-    engTitle: "skoda",
   },
   {
     id: 41,
     title: "פולקסווגן",
-    engTitle: "polksvagen",
+  },
+  {
+    id: 42,
+    title: "פונטיאק",
   },
   {
     id: 43,
     title: "פורד",
-    engTitle: "ford",
   },
   {
-    id: 90,
-    title: "פיאג'ו",
-    engTitle: "piaggio",
+    id: 44,
+    title: "פורשה",
   },
   {
     id: 45,
     title: "פיאט",
-    engTitle: "fiat",
   },
   {
     id: 46,
     title: "פיג'ו",
-    engTitle: "peugeot",
+  },
+  {
+    id: 47,
+    title: "קאדילק",
   },
   {
     id: 48,
     title: "קיה",
-    engTitle: "kia",
+  },
+  {
+    id: 49,
+    title: "קרייזלר",
+  },
+  {
+    id: 50,
+    title: "רובר",
   },
   {
     id: 51,
     title: "רנו",
-    engTitle: "renault",
   },
   {
     id: 52,
     title: "שברולט",
-    engTitle: "chevrolette",
+  },
+  {
+    id: 53,
+    title: "אבארט",
+  },
+  {
+    id: 54,
+    title: "אסטון מרטין",
+  },
+  {
+    id: 55,
+    title: "בנטלי",
+  },
+  {
+    id: 56,
+    title: "סאנשיין",
+  },
+  {
+    id: 57,
+    title: "פרארי",
+  },
+  {
+    id: 59,
+    title: "ג'יפ תע''ר",
+  },
+  {
+    id: 60,
+    title: "דייהו",
+  },
+  {
+    id: 62,
+    title: "טסלה",
+  },
+  {
+    id: 63,
+    title: "למבורגיני",
+  },
+  {
+    id: 76,
+    title: "אולדסמוביל",
+  },
+  {
+    id: 78,
+    title: "ננג'ינג",
+  },
+  {
+    id: 80,
+    title: "לאדה",
+  },
+  {
+    id: 85,
+    title: "איווקו",
+  },
+  {
+    id: 86,
+    title: "מאן",
+  },
+  {
+    id: 87,
+    title: "טאטא",
+  },
+  {
+    id: 88,
+    title: "דונגפנג",
+  },
+  {
+    id: 89,
+    title: "מקסוס",
+  },
+  {
+    id: 90,
+    title: "פיאג'ו",
+  },
+  {
+    id: 92,
+    title: "קופרה",
+  },
+  {
+    id: 93,
+    title: "ג'נסיס",
+  },
+  {
+    id: 95,
+    title: "הינו  HINO",
+  },
+  {
+    id: 96,
+    title: "אוטוביאנקי",
+  },
+  {
+    id: 97,
+    title: "סנטרו",
+  },
+  {
+    id: 98,
+    title: "ליצ'י",
+  },
+  {
+    id: 99,
+    title: "ג'י.איי.סי/ GAC",
+  },
+  {
+    id: 102,
+    title: "אוסטין",
+  },
+  {
+    id: 115,
+    title: "אלפין / ALPINE",
+  },
+  {
+    id: 141,
+    title: "בי.ווי.די / BYD",
+  },
+  {
+    id: 147,
+    title: "צ'רי / Chery",
+  },
+  {
+    id: 168,
+    title: "אף. אי. דאבליו / FEW",
+  },
+  {
+    id: 193,
+    title: "BAW",
+  },
+  {
+    id: 200,
+    title: "ג'יי.איי.סי / JAC",
+  },
+  {
+    id: 224,
+    title: "אורה / Ora",
+  },
+  {
+    id: 231,
+    title: "פולסטאר / POLESTAR",
+  },
+  {
+    id: 284,
+    title: "ווי / WEY",
+  },
+  {
+    id: 287,
+    title: "סרס / SERES",
+  },
+  {
+    id: 300,
+    title: "סקייוול",
+  },
+  {
+    id: 301,
+    title: "הונגצ'י / HONGQI",
+  },
+  {
+    id: 302,
+    title: "סאן ליוינג / Sun Living",
+  },
+  {
+    id: 320,
+    title: "ליפמוטור / leapmotor",
+  },
+  {
+    id: 322,
+    title: "וויה / VOYAH",
+  },
+  {
+    id: 323,
+    title: "EVEASY",
+  },
+  {
+    id: 346,
+    title: "ג'יאיוואן/ Jiayuan",
   },
 ];
 
@@ -168,6 +399,7 @@ export const lowerBoundYearKeywords = [
   "חדשה יותר מ",
   "לא יותר ישנה מ",
   "לפחות משנת",
+  "סביב",
 ];
 export const upperBoundYearKeywords = [
   "מקסימום",
@@ -178,6 +410,7 @@ export const upperBoundYearKeywords = [
   "לא אחרי",
   "לא לאחר",
   "לפני",
+  "סביב",
 ];
 
 export const lowerBoundPriceKeywords = [
@@ -189,6 +422,7 @@ export const lowerBoundPriceKeywords = [
   "לא יותר זול מ",
   "במחיר לא יותר נמוך מ",
   "שעולה לא פחות מ",
+  "סביב",
 ];
 
 export const upperBoundPriceKeywords = [
@@ -201,4 +435,5 @@ export const upperBoundPriceKeywords = [
   "לא מעל",
   "מתחת ל",
   "שעולה לא יותר מ",
+  "סביב",
 ];

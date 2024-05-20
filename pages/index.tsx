@@ -1,4 +1,3 @@
-// pages/index.tsx
 import Head from "next/head";
 import SearchInput from "../components/SearchInput";
 
@@ -8,8 +7,9 @@ const Home = () => {
       <Head>
         <title>Yad2 Cars Search</title>
       </Head>
-      <main>
-        <h1>Search for Cars on Yad2</h1>
+      <main className="main">
+        <h1 className="simply-center">?איזה מכונית בא לך לראות</h1>
+        <h5 className="simply-center">נעשה לך חיפוש אוטו-מטי סטגדיש</h5>
         <SearchInput />
       </main>
     </div>

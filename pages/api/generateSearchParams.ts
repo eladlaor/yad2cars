@@ -118,21 +118,15 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
       const urlParams = new URLSearchParams();
 
-      if (searchParams.carFamilyType) {
-        const carTypeValues = Array.isArray(searchParams.carFamilyType)
-          ? searchParams.carFamilyType
-          : [searchParams.carFamilyType];
-        urlParams.append("carFamilyType", carTypeValues.join(","));
+      if (searchParams.carFamilyType && searchParams.carFamilyType.length > 0) {
+        urlParams.append("carFamilyType", searchParams.carFamilyType.join(","));
       }
 
-      if (searchParams.manufacturer) {
-        const manufacturerValues = Array.isArray(searchParams.manufacturer)
-          ? searchParams.manufacturer
-          : [searchParams.manufacturer];
-        urlParams.append("manufacturer", manufacturerValues.join(","));
+      if (searchParams.manufacturer && searchParams.manufacturer.length > 0) {
+        urlParams.append("manufacturer", searchParams.manufacturer.join(","));
       }
 
-      if (searchParams.year) {
+      if (searchParams.year && searchParams.year.length > 0) {
         urlParams.append(
           "year",
           processRange(
@@ -143,7 +137,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         );
       }
 
-      if (searchParams.price) {
+      if (searchParams.price && searchParams.price.length > 0) {
         urlParams.append(
           "price",
           processRange(
