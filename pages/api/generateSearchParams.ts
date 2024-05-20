@@ -3,6 +3,8 @@ import OpenAI from "openai";
 import {
   carFamilyTypeMapping,
   manufacturerMapping,
+  upperBoundYearKeywords,
+  lowerBoundYearKeywords,
 } from "../../utils/mappings";
 
 const openai = new OpenAI({
@@ -18,6 +20,22 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   const { inputText } = req.body;
+  const staticSystemContent = `
+  You are an assistant that converts Hebrew text into search query parameters for the yad2.co.il vehicle listings site.
+  The output should be a JSON object with the following keys: carFamilyType, manufacturer, year, and price.
+  
+  Ensure that carFamilyType and manufacturer are arrays, even if they contain only one element.
+  Ensure that price is a range if specified as such.
+  The year can be a single year or a range.
+
+  Here are the mappings for carFamilyType:
+  ${Object.entries(carFamilyTypeMapping)
+    .map(([key, value]) => `${key}: ${value}`)
+    .join(", ")}
+
+  Here are the mappings for manufacturer:
+  ${manufacturerMapping.map((m) => `${m.title}: ${m.id}`).join(", ")}
+`;
 
   const generateSearchParams = async (retries: number): Promise<string> => {
     try {
@@ -26,24 +44,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         messages: [
           {
             role: "system",
-            content: `
-              You are an assistant that converts Hebrew text into search query parameters for the yad2.co.il vehicle listings site.
-              The output should be a JSON object with the following keys: carFamilyType, manufacturer, year, and price.
-              
-              Ensure that carFamilyType and manufacturer are arrays, even if they contain only one element.
-              Ensure that price is a range if specified as such.
-              The year can be a single year or a range.
-
-              Here are the mappings for carFamilyType:
-              ${Object.entries(carFamilyTypeMapping)
-                .map(([key, value]) => `${key}: ${value}`)
-                .join(", ")}
-
-              Here are the mappings for manufacturer:
-              ${manufacturerMapping
-                .map((m) => `${m.title}: ${m.id}`)
-                .join(", ")}
-            `,
+            content: staticSystemContent,
           },
           {
             role: "user",

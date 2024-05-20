@@ -158,3 +158,24 @@ export const manufacturerMapping = [
     engTitle: "chevrolette",
   },
 ];
+
+export const lowerBoundYearKeywords = [
+  "מ",
+  "מ ... והלאה",
+  "לאחר",
+  "לכל הפחות",
+  "לפחות",
+  "חדשה יותר מ",
+  "לא יותר ישנה מ",
+  "לפחות משנת",
+];
+export const upperBoundYearKeywords = [
+  "מקסימום",
+  "גג שנת",
+  "גג",
+  "ועד",
+  "עד",
+  "לא אחרי",
+  "לא לאחר",
+  "לפני",
+];
