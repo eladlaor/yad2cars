@@ -40,12 +40,12 @@ export const manufacturerMapping = [
   {
     id: 88,
     title: "דונגפנג",
-    engTitle: null,
+    engTitle: "dongpeng",
   },
   {
     id: 95,
-    title: "הינו  HINO",
-    engTitle: null,
+    title: "הינו",
+    engTitle: "hino",
   },
   {
     id: 19,
@@ -65,7 +65,7 @@ export const manufacturerMapping = [
   {
     id: 86,
     title: "מאן",
-    engTitle: null,
+    engTitle: "man",
   },
   {
     id: 30,
@@ -75,7 +75,7 @@ export const manufacturerMapping = [
   {
     id: 89,
     title: "מקסוס",
-    engTitle: null,
+    engTitle: "mexus",
   },
   {
     id: 31,
@@ -110,7 +110,7 @@ export const manufacturerMapping = [
   {
     id: 97,
     title: "סנטרו",
-    engTitle: null,
+    engTitle: "centro",
   },
   {
     id: 40,

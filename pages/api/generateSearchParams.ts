@@ -1,6 +1,9 @@
-// pages/api/generateSearchParams.ts
 import { NextApiRequest, NextApiResponse } from "next";
 import OpenAI from "openai";
+import {
+  carFamilyTypeMapping,
+  manufacturerMapping,
+} from "../../utils/mappings";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -23,8 +26,24 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         messages: [
           {
             role: "system",
-            content:
-              "You are an assistant that converts Hebrew text into search query parameters for the yad2.co.il vehicle listings site. The output should be a JSON object with the following keys: carFamilyType, manufacturer, year, and price. Ensure that carFamilyType and manufacturer are arrays if there are multiple values, and that price is a range if specified as such. The year can be a single year or a range.",
+            content: `
+              You are an assistant that converts Hebrew text into search query parameters for the yad2.co.il vehicle listings site.
+              The output should be a JSON object with the following keys: carFamilyType, manufacturer, year, and price.
+              
+              Ensure that carFamilyType and manufacturer are arrays, even if they contain only one element.
+              Ensure that price is a range if specified as such.
+              The year can be a single year or a range.
+
+              Here are the mappings for carFamilyType:
+              ${Object.entries(carFamilyTypeMapping)
+                .map(([key, value]) => `${key}: ${value}`)
+                .join(", ")}
+
+              Here are the mappings for manufacturer:
+              ${manufacturerMapping
+                .map((m) => `${m.title}: ${m.id}`)
+                .join(", ")}
+            `,
           },
           {
             role: "user",
@@ -38,11 +57,50 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       if (!jsonResponse) {
         throw new Error("No JSON response!");
       }
-      JSON.parse(jsonResponse); // Check if it is valid JSON
-      return jsonResponse;
+
+      // TODO: here i want to create a verification logic of what i got back, and retry if needed.
+      // i can add additional notes after retrying, to the assistant, with a dynamically built string of notes,
+      // according to the error I received.
+
+      const searchParams = JSON.parse(jsonResponse);
+
+      const urlParams = new URLSearchParams();
+
+      if (searchParams.carFamilyType) {
+        const carTypeValues = Array.isArray(searchParams.carFamilyType)
+          ? searchParams.carFamilyType
+          : [searchParams.carFamilyType];
+        urlParams.append("carFamilyType", carTypeValues.join(","));
+      }
+
+      if (searchParams.manufacturer) {
+        const manufacturerValues = Array.isArray(searchParams.manufacturer)
+          ? searchParams.manufacturer
+          : [searchParams.manufacturer];
+        urlParams.append("manufacturer", manufacturerValues.join(","));
+      }
+
+      if (searchParams.year) {
+        urlParams.append("year", searchParams.year);
+      }
+
+      if (searchParams.price) {
+        if (typeof searchParams.price === "string") {
+          urlParams.append("price", searchParams.price);
+        } else if (Array.isArray(searchParams.price)) {
+          urlParams.append("price", searchParams.price.join("-"));
+        } else if (typeof searchParams.price === "object") {
+          const priceString = `${searchParams.price.min || ""}-${
+            searchParams.price.max || ""
+          }`;
+          urlParams.append("price", priceString);
+        }
+      }
+
+      return `https://www.yad2.co.il/vehicles/cars?${urlParams.toString()}`;
     } catch (error) {
       if (retries > 0) {
-        console.error(`Retrying... Retries left: ${MAX_RETRIES - retries + 1}`);
+        console.error(`Retrying... (${MAX_RETRIES - retries + 1})`);
         return generateSearchParams(retries - 1);
       } else {
         throw new Error(
@@ -53,48 +111,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   };
 
   try {
-    const jsonResponse = await generateSearchParams(MAX_RETRIES);
-    const searchParams = JSON.parse(jsonResponse);
-
-    const urlParams = new URLSearchParams();
-
-    if (searchParams.carFamilyType) {
-      if (Array.isArray(searchParams.carFamilyType)) {
-        urlParams.append("carFamilyType", searchParams.carFamilyType.join(","));
-      } else {
-        urlParams.append("carFamilyType", searchParams.carFamilyType);
-      }
-    }
-
-    if (searchParams.manufacturer) {
-      if (Array.isArray(searchParams.manufacturer)) {
-        urlParams.append("manufacturer", searchParams.manufacturer.join(","));
-      } else {
-        urlParams.append("manufacturer", searchParams.manufacturer);
-      }
-    }
-
-    if (searchParams.year) {
-      urlParams.append("year", searchParams.year);
-    }
-
-    if (searchParams.price) {
-      if (typeof searchParams.price === "string") {
-        urlParams.append("price", searchParams.price);
-      } else if (Array.isArray(searchParams.price)) {
-        urlParams.append("price", searchParams.price.join("-"));
-      } else if (typeof searchParams.price === "object") {
-        const priceString = `${searchParams.price.min || ""}-${
-          searchParams.price.max || ""
-        }`;
-        urlParams.append("price", priceString);
-      }
-    }
-
-    const searchUrl = `https://www.yad2.co.il/vehicles/cars?${urlParams.toString()}`;
+    const searchUrl = await generateSearchParams(MAX_RETRIES);
     console.log("Generated URL:", searchUrl);
-
-    // Return the generated URL to the frontend
     res.status(200).json({ searchUrl });
   } catch (error) {
     console.error(error);
