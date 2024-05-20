@@ -13,6 +13,29 @@ const openai = new OpenAI({
 
 const MAX_RETRIES = 3;
 
+const processYearRange = (
+  years: string[],
+  isLowerBound: boolean,
+  isUpperBound: boolean
+): string => {
+  const numericYears = years
+    .map((year) => parseInt(year, 10))
+    .filter((year) => !isNaN(year));
+
+  if (numericYears.length === 0) return "";
+
+  const minYear = Math.min(...numericYears);
+  const maxYear = Math.max(...numericYears);
+
+  if (isLowerBound && !isUpperBound) {
+    return `${minYear}--1`;
+  } else if (isUpperBound && !isLowerBound) {
+    return `-1-${maxYear}`;
+  } else {
+    return `${minYear}-${maxYear}`;
+  }
+};
+
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "POST") {
     res.setHeader("Allow", ["POST"]);
@@ -22,12 +45,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { inputText } = req.body;
   const staticSystemContent = `
   You are an assistant that converts Hebrew text into search query parameters for the yad2.co.il vehicle listings site.
-  The output should be a JSON object with the following keys: carFamilyType, manufacturer, year, and price.
+  The output should be a JSON object with the following keys: 
+  carFamilyType, 
+  manufacturer, 
+  year, isUpperBound, isLowerBound, 
+  and price.
   
   Ensure that carFamilyType and manufacturer are arrays, even if they contain only one element.
-  Ensure that price is a range if specified as such.
-  The year can be a single year or a range.
-
+  
   Here are the mappings for carFamilyType:
   ${Object.entries(carFamilyTypeMapping)
     .map(([key, value]) => `${key}: ${value}`)
@@ -35,6 +60,22 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   Here are the mappings for manufacturer:
   ${manufacturerMapping.map((m) => `${m.title}: ${m.id}`).join(", ")}
+  
+  Set the json values accordingly to the values of the above maps.
+  
+  Regarding the year param:
+  Ensure the value of 'year' is an array, even if it contains only one element.
+  The format for year values are expected to be either 4 digit (2014) or shortcut two digit (14').
+  If you identify a shortcut format of a year, transform it to a 4 digit format.
+
+  isUpperBound should be boolean:
+  set to true if you identify words that imply an upper bound, such as: ${upperBoundYearKeywords}.
+  false otherwise.
+
+  isLowerBound should be boolean:
+  same logic as isUpperBound, but refering to a lower bound, with words like ${lowerBoundYearKeywords}.
+  
+  Ensure that price is a range if specified as such.
 `;
 
   const generateSearchParams = async (retries: number): Promise<string> => {
@@ -82,7 +123,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       }
 
       if (searchParams.year) {
-        urlParams.append("year", searchParams.year);
+        urlParams.append(
+          "year",
+          processYearRange(
+            searchParams.year,
+            searchParams.isLowerBound,
+            searchParams.isUpperBound
+          )
+        );
       }
 
       if (searchParams.price) {
