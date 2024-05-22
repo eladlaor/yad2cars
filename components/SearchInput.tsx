@@ -11,7 +11,7 @@ export default function SearchInput() {
     try {
       setIsLoading(true);
       setError("");
-      const response = await axios.post("/api/generateSearchParams", {
+      const response = await axios.post("/api/generateSearchUrl", {
         inputText,
       });
       const { searchUrl } = response.data;
