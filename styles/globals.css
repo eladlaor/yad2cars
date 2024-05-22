@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
-body {
+* {
   font-family: 'Open Sans', sans-serif;
+}
+
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  direction: rtl;
 }
 
-.main {
+main {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -16,43 +20,20 @@ body {
   text-align: center;
 }
 
-.simply-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-
-
-.textarea-container textarea {
+textarea {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif; 
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   resize: both; 
   min-height: 100px; 
   min-width: 30vw;
-  direction: rtl;
   text-align: right;
 }
 
-.textarea-container input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  resize: vertical;
-  min-height: 100px;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.textarea-container button {
+button {
   margin-top: 10px;
   padding: 10px 20px;
   font-size: 16px;
@@ -61,9 +42,8 @@ body {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
 }
 
-.textarea-container button:hover {
+button:hover {
   background-color: #0056b3;
 }
