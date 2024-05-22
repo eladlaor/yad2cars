@@ -36,14 +36,13 @@ export const examples = [
     userPrompt: "מחפש טיוטה סיאת שנה 2018 ומעלה",
     assistantResponse: {
       carFamilyType: null,
-      manufacturer: ["19", "37"], // טויוטה, סיאט (correcting typo)
+      manufacturer: ["19", "37"], // טויוטה, סיאט (תיקון שגיעת חתיב)
       year: "2018--1",
       price: null,
     } as ResponseKeys,
   },
   {
-    userPrompt:
-      "מחפש רכב יוקרה מנהלים של אודי וב.מ.וו במחיר של 100 עד 200 אלף שח",
+    userPrompt: "מחפש רכב יוקרה מנהלים של אודי ובמו במחיר של 100 עד 200 אלף שח",
     assistantResponse: {
       carFamilyType: ["8", "3"], // יוקרה, מנהלים
       manufacturer: ["1", "7"], // אאודי, ב.מ.וו

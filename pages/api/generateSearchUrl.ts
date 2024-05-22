@@ -10,7 +10,6 @@ export default async function handler(
 ) {
   if (req.method !== "POST") {
     res.setHeader("Allow", ["POST"]);
-
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
@@ -68,7 +67,7 @@ const generateSearchUrl = async (
     const response = await openai.chat.completions.create({
       model: "gpt-4",
       messages: messagesForGpt4,
-      max_tokens: 200,
+      max_tokens: 250,
     });
 
     const jsonResponse = response?.choices[0]?.message?.content?.trim();
@@ -76,14 +75,12 @@ const generateSearchUrl = async (
       return generateSearchUrl(inputText, retries - 1, gptCorrections);
     }
 
-    const parsedResponse = JSON.parse(jsonResponse);
-    gptCorrections.push(...validateResponseFormat(parsedResponse));
+    const searchParams = JSON.parse(jsonResponse);
+    gptCorrections.push(...validateResponseFormat(searchParams));
 
     if (gptCorrections.length) {
       return generateSearchUrl(inputText, retries - 1, gptCorrections);
     }
-
-    const searchParams = parsedResponse;
 
     const urlParams = new URLSearchParams();
 
