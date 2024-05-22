@@ -1,7 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method !== "POST") {
     res.setHeader("Allow", ["POST"]);
     return res.status(405).end(`Method ${req.method} Not Allowed`);
@@ -17,6 +20,4 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     console.error(error);
     res.status(500).json({ error: "Failed to fetch data from Yad2" });
   }
-};
-
-export default handler;
+}
