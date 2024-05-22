@@ -9,11 +9,11 @@ import {
   upperBoundPriceKeywords,
 } from "../../utils/mappings";
 
+const MAX_RETRIES = 3;
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-
-const MAX_RETRIES = 3;
 
 const processRange = (
   values: string[],
@@ -45,57 +45,64 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   const { inputText } = req.body;
-  const staticSystemContent = `
-  You are an assistant that converts Hebrew text into search query parameters for the yad2.co.il vehicle listings site.
-  The output should be a JSON object with the following keys: 
-  carFamilyType, 
-  manufacturer, 
-  year, isUpperBoundYear, isLowerBoundYear, 
-  price, isUpperBoundPrice, isLowerBoundPrice.
+
+  const baseSystemContent = `
+    You are an assistant that converts Hebrew text into search query parameters for the yad2.co.il vehicle listings site.
+    The output should be a JSON object with the following keys: 
+    carFamilyType, 
+    manufacturer, 
+    year, isUpperBoundYear, isLowerBoundYear, 
+    price, isUpperBoundPrice, isLowerBoundPrice.
     
-  Ensure that carFamilyType and manufacturer are arrays, even if they contain only one element.
+    Ensure that 'carFamilyType', 'manufacturer', 'year' and 'price' are arrays, even if they contain only one element.
     
-  Here are the mappings for carFamilyType:
-  ${Object.entries(carFamilyTypeMapping)
-    .map(([key, value]) => `${key}: ${value}`)
-    .join(", ")}
+    The mappings for carFamilyType:
+    ${Object.entries(carFamilyTypeMapping)
+      .map(([key, value]) => `${key}: ${value}`)
+      .join(", ")}
   
-  Here are the mappings for manufacturer:
-  ${manufacturerMapping.map((m) => `${m.title}: ${m.id}`).join(", ")}
+    The mappings for manufacturer:
+    ${manufacturerMapping.map((m) => `${m.title}: ${m.id}`).join(", ")}
     
-  Set the json values accordingly to the values of the above maps.
+    Set the json values accordingly to the values of the above maps.
     
-  Regarding the year param:
-  Ensure the value of 'year' is an array, even if it contains only one element.
-  The format for year values are expected to be either 4 digit (2014) or shortcut two digit (14').
-  If you identify a shortcut format of a year, transform it to a 4 digit format.
+    Regarding the year param:
+    The format for year values are expected to be either 4 digit (2014) or shortcut two digit (14').
+    If you identify a shortcut format of a year, transform it to a 4 digit format.
   
-  isUpperBoundYear should be boolean:
-  set to true if you identify words that imply an upper bound, such as: ${upperBoundYearKeywords}.
-  false otherwise.
+    isUpperBoundYear should be boolean:
+    set to true if you identify words that imply an upper bound, such as: ${upperBoundYearKeywords}.
+    false otherwise.
   
-  isLowerBoundYear should be boolean:
-  same logic as isUpperBoundYear, but referring to a lower bound, with words like ${lowerBoundYearKeywords}.
+    isLowerBoundYear should be boolean:
+    same logic as isUpperBoundYear, but referring to a lower bound, with words like ${lowerBoundYearKeywords}.
     
-  Regarding the price param:
-  Ensure the value of 'price' is an array, even if it contains only one element.
+    isUpperBoundPrice should be boolean:
+    set to true if you identify words that imply an upper bound, such as: ${upperBoundPriceKeywords}.
+    false otherwise.
   
-  isUpperBoundPrice should be boolean:
-  set to true if you identify words that imply an upper bound, such as: ${upperBoundPriceKeywords}.
-  false otherwise.
-  
-  isLowerBoundPrice should be boolean:
-  same logic as isUpperBoundPrice, but referring to a lower bound, with words like ${lowerBoundPriceKeywords}.
+    isLowerBoundPrice should be boolean:
+    same logic as isUpperBoundPrice, but referring to a lower bound, with words like ${lowerBoundPriceKeywords}.
   `;
 
-  const generateSearchParams = async (retries: number): Promise<string> => {
+  const generateSearchParams = async (
+    retries: number,
+    gptCorrections: string[] = []
+  ): Promise<string> => {
     try {
+      let systemContent = baseSystemContent;
+      if (gptCorrections.length > 0) {
+        systemContent += `Please be sure to correct the following: ${gptCorrections.join(
+          ", "
+        )}`;
+      }
+
       const response = await openai.chat.completions.create({
         model: "gpt-4",
         messages: [
           {
             role: "system",
-            content: staticSystemContent,
+            content: systemContent,
           },
           {
             role: "user",
@@ -107,12 +114,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
       const jsonResponse = response?.choices[0]?.message?.content?.trim();
       if (!jsonResponse) {
+        gptCorrections.push("Received an empty response.");
         throw new Error("No JSON response!");
       }
-
-      // TODO: here i want to create a verification logic of what i got back, and retry if needed.
-      // i can add additional notes after retrying, to the assistant, with a dynamically built string of notes,
-      // according to the error I received.
 
       const searchParams = JSON.parse(jsonResponse);
 
@@ -152,7 +156,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     } catch (error) {
       if (retries > 0) {
         console.error(`Retrying... (${MAX_RETRIES - retries + 1})`);
-        return generateSearchParams(retries - 1);
+        return generateSearchParams(retries - 1, gptCorrections);
       } else {
         throw new Error(
           "Failed to generate search parameters after multiple attempts"

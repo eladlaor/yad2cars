@@ -12,7 +12,7 @@ const Home = () => {
           className="simply-center"
           style={{ marginBottom: "-0.25rem" }}
         >
-          ?איזה מכונית בא לך לראות
+          ?איזה מכוניות בא לך לראות
         </h1>
         <h5 className="simply-center">נעשה לך חיפוש אוטו-מטי סטגדיש</h5>
         <SearchInput />
