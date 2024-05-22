@@ -1,12 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import OpenAI from "openai";
-import { examples, baseSystemPrompt } from "../../utils/prompts";
 import { OpenAIChatMessage, validateResponseFormat } from "../../utils/types";
+import { examples, baseSystemPrompt } from "../../utils/prompts";
 import { YAD2_CAR_SEARCH_URL, MAX_RETRIES } from "../../utils/constants";
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+import { openai } from "../_app";
 
 export default async function handler(
   req: NextApiRequest,
