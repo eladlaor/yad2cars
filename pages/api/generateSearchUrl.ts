@@ -1,7 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { OpenAIChatMessage, validateResponseFormat } from "../../utils/types";
 import { examples, baseSystemPrompt } from "../../utils/prompts";
-import { YAD2_CAR_SEARCH_URL, MAX_RETRIES } from "../../utils/constants";
+import {
+  YAD2_CAR_SEARCH_URL,
+  MAX_RETRIES,
+  FINE_TUNED_MODEL_ID,
+} from "../../utils/constants";
 import OpenAI from "openai";
 
 const openai = new OpenAI({
@@ -44,24 +48,11 @@ const generateSearchUrl = async (
       )}`;
     }
 
-    const messagesForGpt4: OpenAIChatMessage[] = [
+    const messagesForGpt: OpenAIChatMessage[] = [
       {
         role: "system",
         content: systemPrompt,
       },
-      ...examples.flatMap(
-        (example) =>
-          [
-            {
-              role: "user",
-              content: example.userPrompt,
-            },
-            {
-              role: "assistant",
-              content: JSON.stringify(example.assistantResponse),
-            },
-          ] as OpenAIChatMessage[]
-      ),
       {
         role: "user",
         content: inputText,
@@ -69,8 +60,8 @@ const generateSearchUrl = async (
     ];
 
     const response = await openai.chat.completions.create({
-      model: "gpt-4",
-      messages: messagesForGpt4,
+      model: FINE_TUNED_MODEL_ID,
+      messages: messagesForGpt,
       max_tokens: 250,
     });
 

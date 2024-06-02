@@ -14,7 +14,7 @@ const createFineTuneJob = async (fileId: string) => {
       training_file: fileId,
       model: "gpt-3.5-turbo",
       hyperparameters: {
-        n_epochs: 4,
+        n_epochs: 8,
       },
     });
 
