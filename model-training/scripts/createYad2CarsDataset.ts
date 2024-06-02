@@ -6,46 +6,60 @@ import {
 } from "../../utils/mappings";
 import { ResponseKeys, ResponseKeysTypeString } from "../../utils/types";
 
-const getRandomElement = (arr: any[]) =>
-  arr[Math.floor(Math.random() * arr.length)];
+const getRandomElement = (arr: any[]) => {
+  if (arr.length === 0) return null;
+  return arr[Math.floor(Math.random() * arr.length)];
+};
+
+const getRandomRange = (start: number, end: number) => {
+  const lowerBound =
+    Math.random() < 0.5
+      ? null
+      : Math.floor(Math.random() * (end - start + 1)) + start;
+  const upperBound = lowerBound
+    ? Math.random() < 0.5
+      ? null
+      : Math.floor(Math.random() * (end - lowerBound + 1)) + lowerBound
+    : null;
+  return { lowerBound, upperBound };
+};
+
+const cleanUserPrompt = (userPrompt: string) => {
+  return userPrompt
+    .replace(/ עד -$/, "")
+    .replace(/ ל-$/, "")
+    .replace(/ -$/, "")
+    .replace(/  +/g, " ")
+    .trim();
+};
 
 const generateExample = (): any => {
   const carFamilyTypes = Array.from(
     { length: Math.floor(Math.random() * 2) },
     () => getRandomElement(Object.keys(carFamilyTypeMapping))
-  );
+  ).filter(Boolean);
+
   const manufacturers = Array.from(
     { length: Math.floor(Math.random() * 2) },
     () => getRandomElement(manufacturerMapping)
+  ).filter(Boolean);
+
+  const { lowerBound: yearStart, upperBound: yearEnd } = getRandomRange(
+    2000,
+    2023
+  );
+  const { lowerBound: priceStart, upperBound: priceEnd } = getRandomRange(
+    10000,
+    100000
   );
 
-  const yearStart =
-    Math.random() < 0.5
-      ? null
-      : Math.floor(Math.random() * (2020 - 2000 + 1)) + 2000;
-  const yearEnd = yearStart
-    ? Math.random() < 0.5
-      ? null
-      : Math.floor(Math.random() * (2023 - yearStart + 1)) + yearStart
-    : null;
-
-  const priceStart =
-    Math.random() < 0.5
-      ? null
-      : Math.floor(Math.random() * (50000 - 10000 + 1)) + 10000;
-  const priceEnd = priceStart
-    ? Math.random() < 0.5
-      ? null
-      : Math.floor(Math.random() * (100000 - priceStart + 1)) + priceStart
-    : null;
-
   const promptVariations = ["מחפש", "מעוניין ב", "רוצה למצוא", "צריך"];
-  let userPrompt = getRandomElement(promptVariations);
+  let userPrompt = getRandomElement(promptVariations) || "מחפש"; // default prompt if null
 
-  if (carFamilyTypes.length > 0) {
+  if (carFamilyTypes.length) {
     userPrompt += ` ${carFamilyTypes.join(" ")}`;
   }
-  if (manufacturers.length > 0) {
+  if (manufacturers.length) {
     userPrompt += ` ${manufacturers.map((m) => m.title).join(" ")}`;
   }
   if (yearStart || yearEnd) {
@@ -53,7 +67,7 @@ const generateExample = (): any => {
       userPrompt += ` בין השנים ${yearStart} ל-${yearEnd}`;
     } else if (yearStart) {
       userPrompt += ` משנת ${yearStart}`;
-    } else if (yearEnd) {
+    } else {
       userPrompt += ` עד שנה ${yearEnd}`;
     }
   }
@@ -62,30 +76,23 @@ const generateExample = (): any => {
       userPrompt += ` במחיר של ${priceStart} עד ${priceEnd}`;
     } else if (priceStart) {
       userPrompt += ` במחיר של לפחות ${priceStart}`;
-    } else if (priceEnd) {
+    } else {
       userPrompt += ` במחיר של עד ${priceEnd}`;
     }
   }
 
   const assistantResponse: ResponseKeys = {
-    carFamilyType:
-      carFamilyTypes.length > 0
-        ? carFamilyTypes.map((type) => carFamilyTypeMapping[type].toString())
-        : null,
-    manufacturer:
-      manufacturers.length > 0
-        ? manufacturers.map((m) => m.id.toString())
-        : null,
+    carFamilyType: carFamilyTypes.length
+      ? carFamilyTypes.map((type) => carFamilyTypeMapping[type].toString())
+      : null,
+    manufacturer: manufacturers.length
+      ? manufacturers.map((m) => m.id.toString())
+      : null,
     year: yearStart ? `${yearStart}-${yearEnd || "-1"}` : null,
     price: priceStart ? `${priceStart}-${priceEnd || "-1"}` : null,
   };
 
-  userPrompt = userPrompt
-    .replace(/ עד -$/, "")
-    .replace(/ ל-$/, "")
-    .replace(/ -$/, "")
-    .replace(/  +/g, " ")
-    .trim();
+  userPrompt = cleanUserPrompt(userPrompt);
 
   return {
     messages: [

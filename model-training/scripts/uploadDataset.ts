@@ -26,12 +26,15 @@ const uploadDataset = async () => {
   }
 };
 
-uploadDataset()
-  .then((fileId) => {
+const main = async () => {
+  try {
+    const fileId = await uploadDataset();
     if (fileId) {
       console.log("Dataset File ID:", fileId);
     }
-  })
-  .catch((error) => {
+  } catch (error) {
     console.error("Error during dataset upload:", error);
-  });
+  }
+};
+
+main();

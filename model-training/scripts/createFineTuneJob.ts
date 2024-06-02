@@ -25,12 +25,15 @@ const createFineTuneJob = async (fileId: string) => {
   }
 };
 
-createFineTuneJob(EXAMPLES_DATASET_FILE_ID)
-  .then((jobId) => {
+const main = async () => {
+  try {
+    const jobId = await createFineTuneJob(EXAMPLES_DATASET_FILE_ID);
     if (jobId) {
       console.log("Fine-tune Job ID:", jobId);
     }
-  })
-  .catch((error) => {
+  } catch (error) {
     console.error("Error during fine-tune job creation:", error);
-  });
+  }
+};
+
+main();
