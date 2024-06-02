@@ -1,120 +1,120 @@
-{"userPrompt":"מחפש  ג'יפ תע''ר","assistantResponse":{"carFamilyType":null,"manufacturer":[59],"year":null,"price":null}}
-{"userPrompt":"מחפש משפחתיים  בין השנים 2003 ל-2012 במחיר של 47917 עד 80230","assistantResponse":{"carFamilyType":["2"],"manufacturer":null,"year":"2003-2012","price":"47917-80230"}}
-{"userPrompt":"מחפש  סאן ליוינג / Sun Living","assistantResponse":{"carFamilyType":null,"manufacturer":[302],"year":null,"price":null}}
-{"userPrompt":"מחפש   במחיר של 32391 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"32391--1"}}
-{"userPrompt":"מחפש   בין השנים 2009 ל-2020 במחיר של 44187 עד 79749","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2009-2020","price":"44187-79749"}}
-{"userPrompt":"מחפש קטנים וולוו בין השנים 2014 ל-null במחיר של 33321 עד null","assistantResponse":{"carFamilyType":["1"],"manufacturer":[18],"year":"2014--1","price":"33321--1"}}
-{"userPrompt":"מחפש משפחתיים ","assistantResponse":{"carFamilyType":["2"],"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש  טויוטה בין השנים 2004 ל-2008 במחיר של 23292 עד 99173","assistantResponse":{"carFamilyType":null,"manufacturer":[19],"year":"2004-2008","price":"23292-99173"}}
-{"userPrompt":"מחפש ג'יפים  במחיר של 14506 עד null","assistantResponse":{"carFamilyType":["5"],"manufacturer":null,"year":null,"price":"14506--1"}}
-{"userPrompt":"מחפש   בין השנים 2012 ל-2017","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2012-2017","price":null}}
-{"userPrompt":"מחפש קרוסאוברים גרייט וול במחיר של 19734 עד null","assistantResponse":{"carFamilyType":["10"],"manufacturer":[11],"year":null,"price":"19734--1"}}
-{"userPrompt":"מחפש  טסלה","assistantResponse":{"carFamilyType":null,"manufacturer":[62],"year":null,"price":null}}
-{"userPrompt":"מחפש ג'יפים ","assistantResponse":{"carFamilyType":["5"],"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש  ","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש טנדרים ","assistantResponse":{"carFamilyType":["6"],"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש  ווי / WEY בין השנים 2017 ל-null","assistantResponse":{"carFamilyType":null,"manufacturer":[284],"year":"2017--1","price":null}}
-{"userPrompt":"מחפש  מזראטי","assistantResponse":{"carFamilyType":null,"manufacturer":[28],"year":null,"price":null}}
-{"userPrompt":"מחפש  פורד במחיר של 18982 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":[43],"year":null,"price":"18982--1"}}
-{"userPrompt":"מחפש  BAW","assistantResponse":{"carFamilyType":null,"manufacturer":[193],"year":null,"price":null}}
-{"userPrompt":"מחפש  ","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש קטנים  במחיר של 20990 עד 71012","assistantResponse":{"carFamilyType":["1"],"manufacturer":null,"year":null,"price":"20990-71012"}}
-{"userPrompt":"מחפש  ","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש   במחיר של 13647 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"13647--1"}}
-{"userPrompt":"מחפש משפחתיים  בין השנים 2014 ל-2020 במחיר של 28904 עד null","assistantResponse":{"carFamilyType":["2"],"manufacturer":null,"year":"2014-2020","price":"28904--1"}}
-{"userPrompt":"מחפש קטנים  בין השנים 2013 ל-2018 במחיר של 13086 עד null","assistantResponse":{"carFamilyType":["1"],"manufacturer":null,"year":"2013-2018","price":"13086--1"}}
-{"userPrompt":"מחפש ספורט פולקסווגן במחיר של 31947 עד 33943","assistantResponse":{"carFamilyType":["4"],"manufacturer":[41],"year":null,"price":"31947-33943"}}
-{"userPrompt":"מחפש   בין השנים 2009 ל-null","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2009--1","price":null}}
-{"userPrompt":"מחפש   בין השנים 2004 ל-null","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2004--1","price":null}}
-{"userPrompt":"מחפש ספורט ","assistantResponse":{"carFamilyType":["4"],"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש קטנים  במחיר של 19535 עד null","assistantResponse":{"carFamilyType":["1"],"manufacturer":null,"year":null,"price":"19535--1"}}
-{"userPrompt":"מחפש  לקסוס בין השנים 2001 ל-2010 במחיר של 44560 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":[26],"year":"2001-2010","price":"44560--1"}}
-{"userPrompt":"מחפש יוקרה  בין השנים 2020 ל-null במחיר של 10644 עד 71738","assistantResponse":{"carFamilyType":["8"],"manufacturer":null,"year":"2020--1","price":"10644-71738"}}
-{"userPrompt":"מחפש   בין השנים 2018 ל-2020 במחיר של 32752 עד 77649","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2018-2020","price":"32752-77649"}}
-{"userPrompt":"מחפש מנהלים  בין השנים 2003 ל-2023","assistantResponse":{"carFamilyType":["3"],"manufacturer":null,"year":"2003-2023","price":null}}
-{"userPrompt":"מחפש קרוסאוברים אלפא רומיאו בין השנים 2004 ל-null","assistantResponse":{"carFamilyType":["10"],"manufacturer":[5],"year":"2004--1","price":null}}
-{"userPrompt":"מחפש טנדרים אורה / Ora","assistantResponse":{"carFamilyType":["6"],"manufacturer":[224],"year":null,"price":null}}
-{"userPrompt":"מחפש   בין השנים 2006 ל-2020","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2006-2020","price":null}}
-{"userPrompt":"מחפש  קיה במחיר של 36776 עד 99104","assistantResponse":{"carFamilyType":null,"manufacturer":[48],"year":null,"price":"36776-99104"}}
-{"userPrompt":"מחפש  מקסוס בין השנים 2020 ל-null","assistantResponse":{"carFamilyType":null,"manufacturer":[89],"year":"2020--1","price":null}}
-{"userPrompt":"מחפש   בין השנים 2008 ל-null","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2008--1","price":null}}
-{"userPrompt":"מחפש ג'יפים ג'יפ תע''ר במחיר של 27293 עד null","assistantResponse":{"carFamilyType":["5"],"manufacturer":[59],"year":null,"price":"27293--1"}}
-{"userPrompt":"מחפש   בין השנים 2008 ל-2017","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2008-2017","price":null}}
-{"userPrompt":"מחפש קטנים לנצ'יה בין השנים 2004 ל-null במחיר של 23945 עד null","assistantResponse":{"carFamilyType":["1"],"manufacturer":[25],"year":"2004--1","price":"23945--1"}}
-{"userPrompt":"מחפש   בין השנים 2010 ל-2018 במחיר של 26416 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2010-2018","price":"26416--1"}}
-{"userPrompt":"מחפש ספורט  בין השנים 2001 ל-2004 במחיר של 16410 עד 84298","assistantResponse":{"carFamilyType":["4"],"manufacturer":null,"year":"2001-2004","price":"16410-84298"}}
-{"userPrompt":"מחפש  אינפיניטי בין השנים 2005 ל-null במחיר של 24554 עד 85115","assistantResponse":{"carFamilyType":null,"manufacturer":[3],"year":"2005--1","price":"24554-85115"}}
-{"userPrompt":"מחפש יוקרה ","assistantResponse":{"carFamilyType":["8"],"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש קרוסאוברים פורד בין השנים 2006 ל-2010","assistantResponse":{"carFamilyType":["10"],"manufacturer":[43],"year":"2006-2010","price":null}}
-{"userPrompt":"מחפש  בנטלי במחיר של 10169 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":[55],"year":null,"price":"10169--1"}}
-{"userPrompt":"מחפש  איסוזו במחיר של 16309 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":[4],"year":null,"price":"16309--1"}}
-{"userPrompt":"מחפש  די.אס / DS בין השנים 2011 ל-2011","assistantResponse":{"carFamilyType":null,"manufacturer":[14],"year":"2011-2011","price":null}}
-{"userPrompt":"מחפש   במחיר של 29992 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"29992--1"}}
-{"userPrompt":"מחפש קטנים לנצ'יה בין השנים 2018 ל-null","assistantResponse":{"carFamilyType":["1"],"manufacturer":[25],"year":"2018--1","price":null}}
-{"userPrompt":"מחפש  ","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש משפחתיים  בין השנים 2002 ל-null במחיר של 10487 עד null","assistantResponse":{"carFamilyType":["2"],"manufacturer":null,"year":"2002--1","price":"10487--1"}}
-{"userPrompt":"מחפש  טאטא","assistantResponse":{"carFamilyType":null,"manufacturer":[87],"year":null,"price":null}}
-{"userPrompt":"מחפש  רנו בין השנים 2001 ל-2003 במחיר של 27052 עד 51483","assistantResponse":{"carFamilyType":null,"manufacturer":[51],"year":"2001-2003","price":"27052-51483"}}
-{"userPrompt":"מחפש ג'יפים ","assistantResponse":{"carFamilyType":["5"],"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש מנהלים  בין השנים 2015 ל-null במחיר של 45119 עד null","assistantResponse":{"carFamilyType":["3"],"manufacturer":null,"year":"2015--1","price":"45119--1"}}
-{"userPrompt":"מחפש   בין השנים 2004 ל-null","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2004--1","price":null}}
-{"userPrompt":"מחפש ספורט ","assistantResponse":{"carFamilyType":["4"],"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש  ","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש  סרס / SERES בין השנים 2015 ל-null במחיר של 30345 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":[287],"year":"2015--1","price":"30345--1"}}
-{"userPrompt":"מחפש  קיה בין השנים 2014 ל-null","assistantResponse":{"carFamilyType":null,"manufacturer":[48],"year":"2014--1","price":null}}
-{"userPrompt":"מחפש טנדרים ","assistantResponse":{"carFamilyType":["6"],"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש מיניוואנים ג'יאיוואן/ Jiayuan במחיר של 42002 עד null","assistantResponse":{"carFamilyType":["9"],"manufacturer":[346],"year":null,"price":"42002--1"}}
-{"userPrompt":"מחפש מנהלים פורד","assistantResponse":{"carFamilyType":["3"],"manufacturer":[43],"year":null,"price":null}}
-{"userPrompt":"מחפש מסחריים ","assistantResponse":{"carFamilyType":["7"],"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש   במחיר של 10761 עד 19633","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"10761-19633"}}
-{"userPrompt":"מחפש   בין השנים 2000 ל-null","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2000--1","price":null}}
-{"userPrompt":"מחפש קרוסאוברים  בין השנים 2000 ל-2012 במחיר של 34791 עד null","assistantResponse":{"carFamilyType":["10"],"manufacturer":null,"year":"2000-2012","price":"34791--1"}}
-{"userPrompt":"מחפש  פורשה","assistantResponse":{"carFamilyType":null,"manufacturer":[44],"year":null,"price":null}}
-{"userPrompt":"מחפש  סנטרו","assistantResponse":{"carFamilyType":null,"manufacturer":[97],"year":null,"price":null}}
-{"userPrompt":"מחפש קטנים אינפיניטי בין השנים 2011 ל-2013 במחיר של 13431 עד 45153","assistantResponse":{"carFamilyType":["1"],"manufacturer":[3],"year":"2011-2013","price":"13431-45153"}}
-{"userPrompt":"מחפש מיניוואנים טויוטה במחיר של 26034 עד 91751","assistantResponse":{"carFamilyType":["9"],"manufacturer":[19],"year":null,"price":"26034-91751"}}
-{"userPrompt":"מחפש   במחיר של 17721 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"17721--1"}}
-{"userPrompt":"מחפש   בין השנים 2011 ל-2015 במחיר של 13650 עד 73169","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2011-2015","price":"13650-73169"}}
-{"userPrompt":"מחפש ג'יפים  בין השנים 2013 ל-2020","assistantResponse":{"carFamilyType":["5"],"manufacturer":null,"year":"2013-2020","price":null}}
-{"userPrompt":"מחפש   בין השנים 2020 ל-null במחיר של 35639 עד 42141","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2020--1","price":"35639-42141"}}
-{"userPrompt":"מחפש   בין השנים 2016 ל-2017","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2016-2017","price":null}}
-{"userPrompt":"מחפש   במחיר של 45080 עד 46484","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"45080-46484"}}
-{"userPrompt":"מחפש   במחיר של 46870 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"46870--1"}}
-{"userPrompt":"מחפש ג'יפים דייהטסו","assistantResponse":{"carFamilyType":["5"],"manufacturer":[15],"year":null,"price":null}}
-{"userPrompt":"מחפש  ","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש  בי.ווי.די / BYD במחיר של 32797 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":[141],"year":null,"price":"32797--1"}}
-{"userPrompt":"מחפש  ","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש  דייהטסו בין השנים 2019 ל-2021","assistantResponse":{"carFamilyType":null,"manufacturer":[15],"year":"2019-2021","price":null}}
-{"userPrompt":"מחפש מנהלים אסטון מרטין במחיר של 26309 עד null","assistantResponse":{"carFamilyType":["3"],"manufacturer":[54],"year":null,"price":"26309--1"}}
-{"userPrompt":"מחפש קרוסאוברים  במחיר של 29502 עד 29810","assistantResponse":{"carFamilyType":["10"],"manufacturer":null,"year":null,"price":"29502-29810"}}
-{"userPrompt":"מחפש מנהלים טסלה","assistantResponse":{"carFamilyType":["3"],"manufacturer":[62],"year":null,"price":null}}
-{"userPrompt":"מחפש ספורט ג'יאיוואן/ Jiayuan במחיר של 33251 עד null","assistantResponse":{"carFamilyType":["4"],"manufacturer":[346],"year":null,"price":"33251--1"}}
-{"userPrompt":"מחפש   בין השנים 2014 ל-2019","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2014-2019","price":null}}
-{"userPrompt":"מחפש  ","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש קטנים טאטא בין השנים 2000 ל-null","assistantResponse":{"carFamilyType":["1"],"manufacturer":[87],"year":"2000--1","price":null}}
-{"userPrompt":"מחפש טנדרים  בין השנים 2003 ל-2006 במחיר של 30899 עד 51657","assistantResponse":{"carFamilyType":["6"],"manufacturer":null,"year":"2003-2006","price":"30899-51657"}}
-{"userPrompt":"מחפש קרוסאוברים ","assistantResponse":{"carFamilyType":["10"],"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש מנהלים יגואר בין השנים 2019 ל-null","assistantResponse":{"carFamilyType":["3"],"manufacturer":[20],"year":"2019--1","price":null}}
-{"userPrompt":"מחפש  מקסוס במחיר של 38825 עד 51385","assistantResponse":{"carFamilyType":null,"manufacturer":[89],"year":null,"price":"38825-51385"}}
-{"userPrompt":"מחפש  טסלה בין השנים 2005 ל-2019 במחיר של 45891 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":[62],"year":"2005-2019","price":"45891--1"}}
-{"userPrompt":"מחפש  ביואיק בין השנים 2002 ל-null במחיר של 16863 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":[8],"year":"2002--1","price":"16863--1"}}
-{"userPrompt":"מחפש מיניוואנים קרייזלר בין השנים 2006 ל-null במחיר של 35360 עד 93494","assistantResponse":{"carFamilyType":["9"],"manufacturer":[49],"year":"2006--1","price":"35360-93494"}}
-{"userPrompt":"מחפש  סקייוול במחיר של 10482 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":[300],"year":null,"price":"10482--1"}}
-{"userPrompt":"מחפש   בין השנים 2010 ל-null במחיר של 24692 עד 90721","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2010--1","price":"24692-90721"}}
-{"userPrompt":"מחפש   במחיר של 39703 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"39703--1"}}
-{"userPrompt":"מחפש טנדרים  במחיר של 27190 עד null","assistantResponse":{"carFamilyType":["6"],"manufacturer":null,"year":null,"price":"27190--1"}}
-{"userPrompt":"מחפש   בין השנים 2009 ל-null במחיר של 27329 עד 42423","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2009--1","price":"27329-42423"}}
-{"userPrompt":"מחפש קטנים מקסוס בין השנים 2010 ל-2017","assistantResponse":{"carFamilyType":["1"],"manufacturer":[89],"year":"2010-2017","price":null}}
-{"userPrompt":"מחפש  סאן ליוינג / Sun Living","assistantResponse":{"carFamilyType":null,"manufacturer":[302],"year":null,"price":null}}
-{"userPrompt":"מחפש  ","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש   במחיר של 23705 עד 91440","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"23705-91440"}}
-{"userPrompt":"מחפש   בין השנים 2010 ל-null במחיר של 19430 עד null","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2010--1","price":"19430--1"}}
-{"userPrompt":"מחפש ג'יפים שברולט בין השנים 2009 ל-null","assistantResponse":{"carFamilyType":["5"],"manufacturer":[52],"year":"2009--1","price":null}}
-{"userPrompt":"מחפש  BAW במחיר של 17434 עד 68799","assistantResponse":{"carFamilyType":null,"manufacturer":[193],"year":null,"price":"17434-68799"}}
-{"userPrompt":"מחפש  מזראטי בין השנים 2013 ל-null","assistantResponse":{"carFamilyType":null,"manufacturer":[28],"year":"2013--1","price":null}}
-{"userPrompt":"מחפש ספורט ג'יפ / Jeep בין השנים 2001 ל-2010","assistantResponse":{"carFamilyType":["4"],"manufacturer":[10],"year":"2001-2010","price":null}}
-{"userPrompt":"מחפש   בין השנים 2020 ל-2023","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2020-2023","price":null}}
-{"userPrompt":"מחפש יוקרה ג'י.איי.סי/ GAC","assistantResponse":{"carFamilyType":["8"],"manufacturer":[99],"year":null,"price":null}}
-{"userPrompt":"מחפש  צ'רי / Chery בין השנים 2019 ל-2019 במחיר של 34160 עד 92687","assistantResponse":{"carFamilyType":null,"manufacturer":[147],"year":"2019-2019","price":"34160-92687"}}
-{"userPrompt":"מחפש יוקרה ","assistantResponse":{"carFamilyType":["8"],"manufacturer":null,"year":null,"price":null}}
-{"userPrompt":"מחפש  יגואר","assistantResponse":{"carFamilyType":null,"manufacturer":[20],"year":null,"price":null}}
+{"userPrompt":"רוצה למצוא בין השנים 2015 ל-2015 במחיר של לפחות 26484","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2015-2015","price":"26484--1"}}
+{"userPrompt":"צריך סנטרו בין השנים 2005 ל-2021 במחיר של לפחות 29728","assistantResponse":{"carFamilyType":null,"manufacturer":["97"],"year":"2005-2021","price":"29728--1"}}
+{"userPrompt":"מחפש קרוסאוברים בין השנים 2016 ל-2016","assistantResponse":{"carFamilyType":["10"],"manufacturer":null,"year":"2016-2016","price":null}}
+{"userPrompt":"רוצה למצוא בנטלי במחיר של 36582 עד 44656","assistantResponse":{"carFamilyType":null,"manufacturer":["55"],"year":null,"price":"36582-44656"}}
+{"userPrompt":"מחפש מנהלים משנת 2012","assistantResponse":{"carFamilyType":["3"],"manufacturer":null,"year":"2012--1","price":null}}
+{"userPrompt":"מחפש טנדרים במחיר של לפחות 18992","assistantResponse":{"carFamilyType":["6"],"manufacturer":null,"year":null,"price":"18992--1"}}
+{"userPrompt":"מעוניין ב ליפמוטור / leapmotor במחיר של לפחות 34840","assistantResponse":{"carFamilyType":null,"manufacturer":["320"],"year":null,"price":"34840--1"}}
+{"userPrompt":"מעוניין ב מיניוואנים בין השנים 2004 ל-2022","assistantResponse":{"carFamilyType":["9"],"manufacturer":null,"year":"2004-2022","price":null}}
+{"userPrompt":"רוצה למצוא מנהלים משנת 2007 במחיר של 29723 עד 90811","assistantResponse":{"carFamilyType":["3"],"manufacturer":null,"year":"2007--1","price":"29723-90811"}}
+{"userPrompt":"מעוניין ב רנו משנת 2013","assistantResponse":{"carFamilyType":null,"manufacturer":["51"],"year":"2013--1","price":null}}
+{"userPrompt":"צריך משנת 2004","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2004--1","price":null}}
+{"userPrompt":"צריך מסחריים בין השנים 2000 ל-2001 במחיר של לפחות 41735","assistantResponse":{"carFamilyType":["7"],"manufacturer":null,"year":"2000-2001","price":"41735--1"}}
+{"userPrompt":"רוצה למצוא צ'רי / Chery בין השנים 2009 ל-2015 במחיר של 33253 עד 85702","assistantResponse":{"carFamilyType":null,"manufacturer":["147"],"year":"2009-2015","price":"33253-85702"}}
+{"userPrompt":"מחפש ג'יפים אורה / Ora בין השנים 2000 ל-2000","assistantResponse":{"carFamilyType":["5"],"manufacturer":["224"],"year":"2000-2000","price":null}}
+{"userPrompt":"מחפש יוקרה אוטוביאנקי במחיר של לפחות 44047","assistantResponse":{"carFamilyType":["8"],"manufacturer":["96"],"year":null,"price":"44047--1"}}
+{"userPrompt":"רוצה למצוא משנת 2000","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2000--1","price":null}}
+{"userPrompt":"מעוניין ב יוקרה לנצ'יה משנת 2001","assistantResponse":{"carFamilyType":["8"],"manufacturer":["25"],"year":"2001--1","price":null}}
+{"userPrompt":"מעוניין ב יוקרה משנת 2012 במחיר של לפחות 46241","assistantResponse":{"carFamilyType":["8"],"manufacturer":null,"year":"2012--1","price":"46241--1"}}
+{"userPrompt":"רוצה למצוא בין השנים 2004 ל-2004","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2004-2004","price":null}}
+{"userPrompt":"רוצה למצוא יונדאי במחיר של לפחות 14799","assistantResponse":{"carFamilyType":null,"manufacturer":["21"],"year":null,"price":"14799--1"}}
+{"userPrompt":"מחפש קרוסאוברים אוטוביאנקי במחיר של לפחות 12564","assistantResponse":{"carFamilyType":["10"],"manufacturer":["96"],"year":null,"price":"12564--1"}}
+{"userPrompt":"רוצה למצוא קרוסאוברים משנת 2019 במחיר של לפחות 19335","assistantResponse":{"carFamilyType":["10"],"manufacturer":null,"year":"2019--1","price":"19335--1"}}
+{"userPrompt":"מעוניין ב יוקרה אף. אי. דאבליו / FEW במחיר של לפחות 42861","assistantResponse":{"carFamilyType":["8"],"manufacturer":["168"],"year":null,"price":"42861--1"}}
+{"userPrompt":"מעוניין ב במחיר של 28265 עד 68738","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"28265-68738"}}
+{"userPrompt":"צריך מסחריים במחיר של 47634 עד 54444","assistantResponse":{"carFamilyType":["7"],"manufacturer":null,"year":null,"price":"47634-54444"}}
+{"userPrompt":"מחפש מיניוואנים בין השנים 2001 ל-2023 במחיר של 40698 עד 96697","assistantResponse":{"carFamilyType":["9"],"manufacturer":null,"year":"2001-2023","price":"40698-96697"}}
+{"userPrompt":"רוצה למצוא מסחריים במחיר של 32062 עד 44861","assistantResponse":{"carFamilyType":["7"],"manufacturer":null,"year":null,"price":"32062-44861"}}
+{"userPrompt":"מחפש","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
+{"userPrompt":"צריך בין השנים 2015 ל-2017 במחיר של לפחות 31338","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2015-2017","price":"31338--1"}}
+{"userPrompt":"מחפש קטנים סקודה משנת 2017 במחיר של 24750 עד 46619","assistantResponse":{"carFamilyType":["1"],"manufacturer":["40"],"year":"2017--1","price":"24750-46619"}}
+{"userPrompt":"מחפש","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
+{"userPrompt":"מחפש במחיר של 25899 עד 95870","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"25899-95870"}}
+{"userPrompt":"מחפש דודג' משנת 2010 במחיר של לפחות 12704","assistantResponse":{"carFamilyType":null,"manufacturer":["13"],"year":"2010--1","price":"12704--1"}}
+{"userPrompt":"רוצה למצוא ספורט במחיר של 47211 עד 94765","assistantResponse":{"carFamilyType":["4"],"manufacturer":null,"year":null,"price":"47211-94765"}}
+{"userPrompt":"צריך רובר במחיר של 29277 עד 89074","assistantResponse":{"carFamilyType":null,"manufacturer":["50"],"year":null,"price":"29277-89074"}}
+{"userPrompt":"מעוניין ב קטנים ליפמוטור / leapmotor","assistantResponse":{"carFamilyType":["1"],"manufacturer":["320"],"year":null,"price":null}}
+{"userPrompt":"מחפש בין השנים 2012 ל-2017 במחיר של 16416 עד 67306","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2012-2017","price":"16416-67306"}}
+{"userPrompt":"צריך מסחריים","assistantResponse":{"carFamilyType":["7"],"manufacturer":null,"year":null,"price":null}}
+{"userPrompt":"רוצה למצוא מסחריים","assistantResponse":{"carFamilyType":["7"],"manufacturer":null,"year":null,"price":null}}
+{"userPrompt":"מעוניין ב טנדרים דייהטסו בין השנים 2008 ל-2017 במחיר של 38894 עד 39354","assistantResponse":{"carFamilyType":["6"],"manufacturer":["15"],"year":"2008-2017","price":"38894-39354"}}
+{"userPrompt":"מחפש מנהלים במחיר של 43113 עד 58518","assistantResponse":{"carFamilyType":["3"],"manufacturer":null,"year":null,"price":"43113-58518"}}
+{"userPrompt":"צריך קאדילק במחיר של לפחות 32472","assistantResponse":{"carFamilyType":null,"manufacturer":["47"],"year":null,"price":"32472--1"}}
+{"userPrompt":"רוצה למצוא משפחתיים משנת 2013","assistantResponse":{"carFamilyType":["2"],"manufacturer":null,"year":"2013--1","price":null}}
+{"userPrompt":"מחפש קרוסאוברים יגואר","assistantResponse":{"carFamilyType":["10"],"manufacturer":["20"],"year":null,"price":null}}
+{"userPrompt":"רוצה למצוא ספורט משנת 2004","assistantResponse":{"carFamilyType":["4"],"manufacturer":null,"year":"2004--1","price":null}}
+{"userPrompt":"מחפש במחיר של לפחות 26793","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"26793--1"}}
+{"userPrompt":"צריך מסחריים סאן ליוינג / Sun Living","assistantResponse":{"carFamilyType":["7"],"manufacturer":["302"],"year":null,"price":null}}
+{"userPrompt":"רוצה למצוא במחיר של 28819 עד 83850","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"28819-83850"}}
+{"userPrompt":"רוצה למצוא פונטיאק במחיר של 44665 עד 97835","assistantResponse":{"carFamilyType":null,"manufacturer":["42"],"year":null,"price":"44665-97835"}}
+{"userPrompt":"מעוניין ב בין השנים 2016 ל-2020","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2016-2020","price":null}}
+{"userPrompt":"מחפש במחיר של לפחות 47340","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"47340--1"}}
+{"userPrompt":"רוצה למצוא קטנים בין השנים 2010 ל-2012","assistantResponse":{"carFamilyType":["1"],"manufacturer":null,"year":"2010-2012","price":null}}
+{"userPrompt":"רוצה למצוא מסחריים משנת 2012","assistantResponse":{"carFamilyType":["7"],"manufacturer":null,"year":"2012--1","price":null}}
+{"userPrompt":"מעוניין ב יוקרה למבורגיני בין השנים 2008 ל-2016","assistantResponse":{"carFamilyType":["8"],"manufacturer":["63"],"year":"2008-2016","price":null}}
+{"userPrompt":"מעוניין ב בין השנים 2004 ל-2019 במחיר של לפחות 16266","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2004-2019","price":"16266--1"}}
+{"userPrompt":"צריך טנדרים צ'רי / Chery במחיר של 40190 עד 77682","assistantResponse":{"carFamilyType":["6"],"manufacturer":["147"],"year":null,"price":"40190-77682"}}
+{"userPrompt":"מעוניין ב יוקרה בין השנים 2011 ל-2011","assistantResponse":{"carFamilyType":["8"],"manufacturer":null,"year":"2011-2011","price":null}}
+{"userPrompt":"מעוניין ב משנת 2000","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2000--1","price":null}}
+{"userPrompt":"צריך ווי / WEY","assistantResponse":{"carFamilyType":null,"manufacturer":["284"],"year":null,"price":null}}
+{"userPrompt":"צריך אוסטין","assistantResponse":{"carFamilyType":null,"manufacturer":["102"],"year":null,"price":null}}
+{"userPrompt":"רוצה למצוא קופרה משנת 2009","assistantResponse":{"carFamilyType":null,"manufacturer":["92"],"year":"2009--1","price":null}}
+{"userPrompt":"צריך במחיר של 28657 עד 51959","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"28657-51959"}}
+{"userPrompt":"צריך מיניוואנים משנת 2000","assistantResponse":{"carFamilyType":["9"],"manufacturer":null,"year":"2000--1","price":null}}
+{"userPrompt":"רוצה למצוא משנת 2019 במחיר של 18671 עד 89842","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2019--1","price":"18671-89842"}}
+{"userPrompt":"צריך טנדרים סאן ליוינג / Sun Living בין השנים 2019 ל-2021","assistantResponse":{"carFamilyType":["6"],"manufacturer":["302"],"year":"2019-2021","price":null}}
+{"userPrompt":"צריך קרוסאוברים משנת 2004","assistantResponse":{"carFamilyType":["10"],"manufacturer":null,"year":"2004--1","price":null}}
+{"userPrompt":"רוצה למצוא במחיר של לפחות 15980","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"15980--1"}}
+{"userPrompt":"רוצה למצוא טנדרים בין השנים 2000 ל-2001 במחיר של לפחות 49152","assistantResponse":{"carFamilyType":["6"],"manufacturer":null,"year":"2000-2001","price":"49152--1"}}
+{"userPrompt":"רוצה למצוא ספורט קופרה בין השנים 2011 ל-2016","assistantResponse":{"carFamilyType":["4"],"manufacturer":["92"],"year":"2011-2016","price":null}}
+{"userPrompt":"רוצה למצוא טנדרים בין השנים 2006 ל-2010","assistantResponse":{"carFamilyType":["6"],"manufacturer":null,"year":"2006-2010","price":null}}
+{"userPrompt":"מחפש טנדרים","assistantResponse":{"carFamilyType":["6"],"manufacturer":null,"year":null,"price":null}}
+{"userPrompt":"רוצה למצוא מסחריים במחיר של 38336 עד 56204","assistantResponse":{"carFamilyType":["7"],"manufacturer":null,"year":null,"price":"38336-56204"}}
+{"userPrompt":"מחפש בין השנים 2008 ל-2022","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2008-2022","price":null}}
+{"userPrompt":"צריך לינקולן במחיר של 11529 עד 28259","assistantResponse":{"carFamilyType":null,"manufacturer":["23"],"year":null,"price":"11529-28259"}}
+{"userPrompt":"מעוניין ב מנהלים שברולט","assistantResponse":{"carFamilyType":["3"],"manufacturer":["52"],"year":null,"price":null}}
+{"userPrompt":"רוצה למצוא בין השנים 2015 ל-2022","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2015-2022","price":null}}
+{"userPrompt":"רוצה למצוא בין השנים 2006 ל-2022 במחיר של לפחות 45796","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2006-2022","price":"45796--1"}}
+{"userPrompt":"צריך גרייט וול במחיר של לפחות 49876","assistantResponse":{"carFamilyType":null,"manufacturer":["11"],"year":null,"price":"49876--1"}}
+{"userPrompt":"מחפש קטנים פורד","assistantResponse":{"carFamilyType":["1"],"manufacturer":["43"],"year":null,"price":null}}
+{"userPrompt":"צריך איסוזו בין השנים 2006 ל-2012","assistantResponse":{"carFamilyType":null,"manufacturer":["4"],"year":"2006-2012","price":null}}
+{"userPrompt":"צריך משנת 2016 במחיר של 31329 עד 66507","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2016--1","price":"31329-66507"}}
+{"userPrompt":"מעוניין ב שברולט","assistantResponse":{"carFamilyType":null,"manufacturer":["52"],"year":null,"price":null}}
+{"userPrompt":"מעוניין ב איווקו במחיר של לפחות 33351","assistantResponse":{"carFamilyType":null,"manufacturer":["85"],"year":null,"price":"33351--1"}}
+{"userPrompt":"מחפש משפחתיים","assistantResponse":{"carFamilyType":["2"],"manufacturer":null,"year":null,"price":null}}
+{"userPrompt":"מעוניין ב דודג' בין השנים 2014 ל-2018 במחיר של לפחות 16705","assistantResponse":{"carFamilyType":null,"manufacturer":["13"],"year":"2014-2018","price":"16705--1"}}
+{"userPrompt":"מעוניין ב מיצובישי","assistantResponse":{"carFamilyType":null,"manufacturer":["30"],"year":null,"price":null}}
+{"userPrompt":"צריך משפחתיים","assistantResponse":{"carFamilyType":["2"],"manufacturer":null,"year":null,"price":null}}
+{"userPrompt":"מחפש דודג'","assistantResponse":{"carFamilyType":null,"manufacturer":["13"],"year":null,"price":null}}
+{"userPrompt":"מחפש משפחתיים דודג' במחיר של לפחות 43803","assistantResponse":{"carFamilyType":["2"],"manufacturer":["13"],"year":null,"price":"43803--1"}}
+{"userPrompt":"מעוניין ב מסחריים רנו","assistantResponse":{"carFamilyType":["7"],"manufacturer":["51"],"year":null,"price":null}}
+{"userPrompt":"מעוניין ב דייהטסו בין השנים 2012 ל-2023 במחיר של לפחות 36958","assistantResponse":{"carFamilyType":null,"manufacturer":["15"],"year":"2012-2023","price":"36958--1"}}
+{"userPrompt":"מחפש","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
+{"userPrompt":"מחפש משפחתיים משנת 2002","assistantResponse":{"carFamilyType":["2"],"manufacturer":null,"year":"2002--1","price":null}}
+{"userPrompt":"רוצה למצוא דודג' בין השנים 2011 ל-2015","assistantResponse":{"carFamilyType":null,"manufacturer":["13"],"year":"2011-2015","price":null}}
+{"userPrompt":"מעוניין ב קרוסאוברים אבארט בין השנים 2009 ל-2016","assistantResponse":{"carFamilyType":["10"],"manufacturer":["53"],"year":"2009-2016","price":null}}
+{"userPrompt":"מעוניין ב קרוסאוברים בין השנים 2012 ל-2021","assistantResponse":{"carFamilyType":["10"],"manufacturer":null,"year":"2012-2021","price":null}}
+{"userPrompt":"צריך איסוזו","assistantResponse":{"carFamilyType":null,"manufacturer":["4"],"year":null,"price":null}}
+{"userPrompt":"מחפש ג'יפים","assistantResponse":{"carFamilyType":["5"],"manufacturer":null,"year":null,"price":null}}
+{"userPrompt":"רוצה למצוא במחיר של 25555 עד 73609","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":"25555-73609"}}
+{"userPrompt":"מעוניין ב סאנשיין בין השנים 2009 ל-2013","assistantResponse":{"carFamilyType":null,"manufacturer":["56"],"year":"2009-2013","price":null}}
+{"userPrompt":"צריך","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
+{"userPrompt":"מחפש מסחריים טאטא במחיר של לפחות 21935","assistantResponse":{"carFamilyType":["7"],"manufacturer":["87"],"year":null,"price":"21935--1"}}
+{"userPrompt":"מעוניין ב רובר משנת 2006 במחיר של לפחות 22489","assistantResponse":{"carFamilyType":null,"manufacturer":["50"],"year":"2006--1","price":"22489--1"}}
+{"userPrompt":"צריך ג'יפים לינקולן משנת 2000 במחיר של 18444 עד 42143","assistantResponse":{"carFamilyType":["5"],"manufacturer":["23"],"year":"2000--1","price":"18444-42143"}}
+{"userPrompt":"מעוניין ב טנדרים","assistantResponse":{"carFamilyType":["6"],"manufacturer":null,"year":null,"price":null}}
+{"userPrompt":"מחפש לנד רובר בין השנים 2010 ל-2016","assistantResponse":{"carFamilyType":null,"manufacturer":["24"],"year":"2010-2016","price":null}}
+{"userPrompt":"צריך הינו HINO במחיר של לפחות 48986","assistantResponse":{"carFamilyType":null,"manufacturer":["95"],"year":null,"price":"48986--1"}}
+{"userPrompt":"מחפש בין השנים 2000 ל-2000","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2000-2000","price":null}}
+{"userPrompt":"מעוניין ב מיניוואנים פיאג'ו משנת 2019","assistantResponse":{"carFamilyType":["9"],"manufacturer":["90"],"year":"2019--1","price":null}}
+{"userPrompt":"רוצה למצוא ג'יפ / Jeep","assistantResponse":{"carFamilyType":null,"manufacturer":["10"],"year":null,"price":null}}
+{"userPrompt":"צריך סרס / SERES","assistantResponse":{"carFamilyType":null,"manufacturer":["287"],"year":null,"price":null}}
+{"userPrompt":"מחפש קרוסאוברים דייהו","assistantResponse":{"carFamilyType":["10"],"manufacturer":["60"],"year":null,"price":null}}
+{"userPrompt":"רוצה למצוא טנדרים בין השנים 2005 ל-2006 במחיר של לפחות 18982","assistantResponse":{"carFamilyType":["6"],"manufacturer":null,"year":"2005-2006","price":"18982--1"}}
+{"userPrompt":"מעוניין ב משפחתיים במחיר של לפחות 26725","assistantResponse":{"carFamilyType":["2"],"manufacturer":null,"year":null,"price":"26725--1"}}
+{"userPrompt":"מעוניין ב משפחתיים במחיר של 46554 עד 92597","assistantResponse":{"carFamilyType":["2"],"manufacturer":null,"year":null,"price":"46554-92597"}}
+{"userPrompt":"רוצה למצוא ג'יפים איווקו במחיר של 46288 עד 79282","assistantResponse":{"carFamilyType":["5"],"manufacturer":["85"],"year":null,"price":"46288-79282"}}
+{"userPrompt":"צריך","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":null,"price":null}}
+{"userPrompt":"מחפש ספורט אולדסמוביל בין השנים 2010 ל-2023 במחיר של לפחות 48288","assistantResponse":{"carFamilyType":["4"],"manufacturer":["76"],"year":"2010-2023","price":"48288--1"}}
+{"userPrompt":"מעוניין ב הינו HINO בין השנים 2020 ל-2020","assistantResponse":{"carFamilyType":null,"manufacturer":["95"],"year":"2020-2020","price":null}}
+{"userPrompt":"מחפש בין השנים 2020 ל-2023","assistantResponse":{"carFamilyType":null,"manufacturer":null,"year":"2020-2023","price":null}}
