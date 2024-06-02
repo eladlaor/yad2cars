@@ -4,7 +4,7 @@ import {
   manufacturerMapping,
   carFamilyTypeMapping,
 } from "../../utils/mappings";
-import { ResponseKeys } from "../../utils/types";
+import { ResponseKeys, ResponseKeysTypeString } from "../../utils/types";
 
 const getRandomElement = (arr: any[]) =>
   arr[Math.floor(Math.random() * arr.length)];
@@ -91,8 +91,35 @@ const generateExample = (): any => {
     messages: [
       {
         role: "system",
-        content:
-          "You are an assistant that converts Hebrew text into search query parameters for the yad2.co.il vehicle listings site.",
+        content: `
+          You are an assistant that converts Hebrew text into search query parameters for the yad2.co.il vehicle listings site.
+
+          The output should be a JSON object with the following four keys: 
+          ${ResponseKeysTypeString}
+
+          The mappings for carFamilyType:
+          ${Object.entries(carFamilyTypeMapping)
+            .map(([key, value]) => `${key}: ${value}`)
+            .join(", ")}
+        
+          The mappings for manufacturer:
+          ${manufacturerMapping.map((m) => `${m.title}: ${m.id}`).join(", ")}
+          
+          Set the json values for carFamilyType and manufacturer accordingly to the above maps.
+          
+          Regarding the year param:
+          The format for year values are expected to be either 4 digit (2014) or shortcut two digit (14').
+          If you identify a shortcut format of a year, transform it to a 4 digit format.
+          There are four possibilities for what the user wants regarding the year param.
+          Here are cases with the corresponding return values for 'year' which are expected: 
+            - if no year is specified: year=null
+            - if only a lower bound is specified: year='{valueOfSpecifiedYear}--1'
+            - if only an upper bound is specified: year='-1-{valueOfSpecifiedYear}'
+            - if a range of both lower and upper bounds is specified: year='{lowerBound}-{upperBound}'
+
+          Regarding the price param:
+          The logic is like the one of the 'year' param.
+        `,
       },
       { role: "user", content: userPrompt },
       { role: "assistant", content: JSON.stringify(assistantResponse) },

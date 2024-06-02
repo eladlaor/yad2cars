@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { OpenAIChatMessage, validateResponseFormat } from "../../utils/types";
-import { examples, baseSystemPrompt } from "../../utils/prompts";
+import { baseSystemPrompt } from "../../utils/prompts";
 import {
   YAD2_CAR_SEARCH_URL,
   MAX_RETRIES,
@@ -73,6 +73,11 @@ const generateSearchUrl = async (
     gptCorrections.push(...validateResponseFormat(searchParams));
 
     if (gptCorrections.length) {
+      console.error(
+        `Invalid response format. Retry ${
+          MAX_RETRIES - retries + 1
+        } of ${MAX_RETRIES}`
+      );
       return generateSearchUrl(inputText, retries - 1, gptCorrections);
     }
 
@@ -91,7 +96,11 @@ const generateSearchUrl = async (
     return `${YAD2_CAR_SEARCH_URL}?${urlParams}`;
   } catch (error: any) {
     if (retries > 0) {
-      console.error(`Retrying... (${MAX_RETRIES - retries + 1})`);
+      console.error(
+        `Error: ${error.message || error || "Unknown"}. Retry (${
+          MAX_RETRIES - retries + 1
+        }) of ${MAX_RETRIES}`
+      );
       return generateSearchUrl(inputText, retries - 1, gptCorrections);
     } else {
       throw new Error(error);
