@@ -9,10 +9,7 @@ import { ResponseKeys } from "../../utils/types";
 const getRandomElement = (arr: any[]) =>
   arr[Math.floor(Math.random() * arr.length)];
 
-const generateExample = (): {
-  userPrompt: string;
-  assistantResponse: ResponseKeys;
-} => {
+const generateExample = (): any => {
   const carFamilyTypes = Array.from(
     { length: Math.floor(Math.random() * 2) },
     () => getRandomElement(Object.keys(carFamilyTypeMapping))
@@ -86,10 +83,21 @@ const generateExample = (): {
   userPrompt = userPrompt
     .replace(/ עד -$/, "")
     .replace(/ ל-$/, "")
+    .replace(/ -$/, "")
     .replace(/  +/g, " ")
     .trim();
 
-  return { userPrompt, assistantResponse };
+  return {
+    messages: [
+      {
+        role: "system",
+        content:
+          "You are an assistant that converts Hebrew text into search query parameters for the yad2.co.il vehicle listings site.",
+      },
+      { role: "user", content: userPrompt },
+      { role: "assistant", content: JSON.stringify(assistantResponse) },
+    ],
+  };
 };
 
 const examples = Array.from({ length: 120 }, generateExample);
