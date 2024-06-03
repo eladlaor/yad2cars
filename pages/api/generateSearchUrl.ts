@@ -1,7 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { OpenAIChatMessage, validateResponseFormat } from "../../utils/types";
-import { examples, baseSystemPrompt } from "../../utils/prompts";
-import { YAD2_CAR_SEARCH_URL, MAX_RETRIES } from "../../utils/constants";
+import { baseSystemPrompt } from "../../utils/prompts";
+import {
+  YAD2_CAR_SEARCH_URL,
+  MAX_RETRIES,
+  FINE_TUNED_MODEL_ID,
+} from "../../utils/constants";
 import OpenAI from "openai";
 
 const openai = new OpenAI({
@@ -13,8 +17,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method !== "POST") {
-    res.setHeader("Allow", ["POST"]);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(405).end("Not Allowed");
   }
 
   const { inputText } = req.body;
@@ -44,24 +47,11 @@ const generateSearchUrl = async (
       )}`;
     }
 
-    const messagesForGpt4: OpenAIChatMessage[] = [
+    const messagesForGpt: OpenAIChatMessage[] = [
       {
         role: "system",
         content: systemPrompt,
       },
-      ...examples.flatMap(
-        (example) =>
-          [
-            {
-              role: "user",
-              content: example.userPrompt,
-            },
-            {
-              role: "assistant",
-              content: JSON.stringify(example.assistantResponse),
-            },
-          ] as OpenAIChatMessage[]
-      ),
       {
         role: "user",
         content: inputText,
@@ -69,8 +59,8 @@ const generateSearchUrl = async (
     ];
 
     const response = await openai.chat.completions.create({
-      model: "gpt-4",
-      messages: messagesForGpt4,
+      model: FINE_TUNED_MODEL_ID,
+      messages: messagesForGpt,
       max_tokens: 250,
     });
 
@@ -83,6 +73,11 @@ const generateSearchUrl = async (
     gptCorrections.push(...validateResponseFormat(searchParams));
 
     if (gptCorrections.length) {
+      console.error(
+        `Invalid response format. Retry ${
+          MAX_RETRIES - retries + 1
+        } of ${MAX_RETRIES}`
+      );
       return generateSearchUrl(inputText, retries - 1, gptCorrections);
     }
 
@@ -101,7 +96,11 @@ const generateSearchUrl = async (
     return `${YAD2_CAR_SEARCH_URL}?${urlParams}`;
   } catch (error: any) {
     if (retries > 0) {
-      console.error(`Retrying... (${MAX_RETRIES - retries + 1})`);
+      console.error(
+        `Error: ${error.message || error || "Unknown"}. Retry (${
+          MAX_RETRIES - retries + 1
+        }) of ${MAX_RETRIES}`
+      );
       return generateSearchUrl(inputText, retries - 1, gptCorrections);
     } else {
       throw new Error(error);
